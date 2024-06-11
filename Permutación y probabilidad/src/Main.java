@@ -12,11 +12,12 @@ public class Main {
             System.out.println(perm);
         }
 
-        // Inicializar Dataset
+        // Inicializar Datasets
         DataSetPermutation datasetPermutation = new DataSetPermutation();
+        DataSetProbability datasetProbability = new DataSetProbability();
 
         // Calcular probabilidades
-        Probability probability = new Probability(datasetPermutation);
+        Probability probability = new Probability(datasetPermutation, datasetProbability);
         System.out.println("\nProbabilities:");
 
         // Ejemplos de cálculo de probabilidades
@@ -29,6 +30,17 @@ public class Main {
 
         System.out.println("P(A|B): " + probability.getConditionalProbability("a", "b"));
         System.out.println("P(B|C): " + probability.getConditionalProbability("b", "c"));
+
+        // Obtener y mostrar el dataset de DataSetProbability
+        int[][] datasetProb = datasetProbability.getDataset();
+        System.out.println("\nDataSetProbability:");
+        for (int[] row : datasetProb) {
+            System.out.println(Arrays.toString(row));
+        }
+
+        // Obtener y mostrar el dataset de DataSetPermutation
+        String[] datasetPerm = datasetPermutation.getDataset();
+        System.out.println("\nDataSetPermutation:");
+        System.out.println(Arrays.toString(datasetPerm));
     }
 }
-

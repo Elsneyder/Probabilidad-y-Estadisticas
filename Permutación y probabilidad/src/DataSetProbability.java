@@ -1,8 +1,7 @@
-class DataSetProbability {
-    int[][] x1 = {{7, 3}, {2, 6}};
+public class DataSetProbability {
+    private int[][] x1 = {{33, 22}, {25, 46}};
 
-    public DataSetProbability() {
-    }
+    public DataSetProbability() {}
 
     public int[][] getX1() {
         return x1;
@@ -10,5 +9,9 @@ class DataSetProbability {
 
     public void setX1(int[][] x1) {
         this.x1 = x1;
+    }
+
+    public int[][] getDataset() {
+        return x1;
     }
 }
